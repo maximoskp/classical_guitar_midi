@@ -1,0 +1,16 @@
+single_guitar_files: 2224
+total_files: 2519
+single-to-total ratio: 0.8828900357284637
+note_events_number: 898972
+chord_events_number: 265168
+rest_events_number: 0
+other_events_number: 0
+unique_note_events number: 0
+unique_chord_events number: 0
+unique_rest_events number: 0
+unique_note_pitches number: 70
+unique_chord_pitches number: 8801
+lowest note pitch: 24
+highest note pitch: 100
+lowest chord pitch: 24
+highest chord pitch: 98

@@ -1,0 +1,11 @@
+Dataset with tablature
+http://www.classclef.com/
+
+midi to tab with lilypond
+https://rdrr.io/cran/tabr/man/miditab.html
+
+pyguitarpro
+https://pyguitarpro.readthedocs.io/en/stable/pyguitarpro/quickstart.html
+
+tuxguitar gpx to gp5
+https://www.wikihow.com/Convert-.GPX-to-GP5-(with-Tuxguitar)

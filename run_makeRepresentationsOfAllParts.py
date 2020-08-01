@@ -19,6 +19,7 @@ picklefolder = 'pickles'
 
 r_parts = []
 files_not_parsed = []
+invalid_parts = []
 '''
 Giuliani_Papillon_Op50_No1.mid
 Giuliani_Papillon_Op50_No12.mid
@@ -29,9 +30,13 @@ Pernambuco_Brasileirinho.mid
 for i,f in enumerate( os.listdir(foldername) ):
     if f.endswith('.mid') or f.endswith('.midi'):
         print(str(i) + '/' + str(len(os.listdir(foldername))) + ' - processing file: ' + f)
-        s = sfp.getChordsRestRepresentations(foldername, f)
+        s, val_status, p_idx = sfp.getChordsRestRepresentations(foldername, f)
         if len(s) > 0:
-            r_parts.extend( s )
+            for i in range(len(s)):
+                if val_status[i] == 'valid':
+                    r_parts.append( s[i] )
+                else:
+                    invalid_parts.append( {'file': f, 'reason': val_status[i]} )
         else:
             files_not_parsed.append(f)
 
@@ -66,6 +71,12 @@ with open(picklefolder + os.sep + 'r_parts.pickle', 'wb') as handle:
 
 with open(picklefolder + os.sep + 's_cnt.pickle', 'wb') as handle:
     pickle.dump(s_cnt, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+with open(picklefolder + os.sep + 'files_not_parsed.pickle', 'wb') as handle:
+    pickle.dump(files_not_parsed, handle, protocol=pickle.HIGHEST_PROTOCOL)
+
+with open(picklefolder + os.sep + 'invalid_parts.pickle', 'wb') as handle:
+    pickle.dump(invalid_parts, handle, protocol=pickle.HIGHEST_PROTOCOL)
 
 
 '''
