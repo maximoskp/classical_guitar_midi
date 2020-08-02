@@ -1,0 +1,5 @@
+pickles/*
+!pickles/.gitkeep
+!pickles/single_guitar_stats/.gitkeep
+
+
