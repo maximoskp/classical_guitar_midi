@@ -42,7 +42,7 @@ class MusicEvent:
             self.duration = float( m21_note.duration.quarterLength )
             self.velocity = float( m21_note.volume.velocity )
     # end constructor
-# end ChordEvent class
+# end MusicEvent class
 
 for i,f in enumerate( os.listdir(foldername) ):
     if f.endswith('.mid') or f.endswith('.midi'):
@@ -80,7 +80,7 @@ labels, values = zip(*pitches_counter.items())
 indexes = np.arange(len(labels))
 plt.clf()
 plt.bar(indexes, values)
-plt.savefig('figs' + os.sep + 'pitches_whole_data_distribution.png', dpi=300)
+plt.savefig('figs' + os.sep + 'pitches_whole_data_distribution.png', dpi=600)
 # and plot
 
 with open(picklefolder + os.sep + 'events_list.pickle', 'wb') as handle:
